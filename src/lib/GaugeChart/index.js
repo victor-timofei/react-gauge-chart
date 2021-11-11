@@ -439,7 +439,7 @@ const addText = (percentage, props, outerRadius, width, g) => {
   const { formatTextValue, fontSize } = props;
   var textPadding = 20;
   const text = formatTextValue
-    ? formatTextValue(floatingNumber(percentage))
+    ? formatTextValue(percentage)
     : floatingNumber(percentage) + "%";
   g.current
     .append("g")
