@@ -300,7 +300,7 @@ var addText = function addText(percentage, props, outerRadius, width, g) {
   var formatTextValue = props.formatTextValue,
       fontSize = props.fontSize;
   var textPadding = 20;
-  var text = formatTextValue ? formatTextValue(floatingNumber(percentage)) : floatingNumber(percentage) + "%";
+  var text = formatTextValue ? formatTextValue(percentage) : floatingNumber(percentage) + "%";
   g.current.append("g").attr("class", "text-group").attr("transform", "translate(".concat(outerRadius.current, ", ").concat(outerRadius.current / 2 + textPadding, ")")).append("text").text(text) // this computation avoid text overflow. When formatted value is over 10 characters, we should reduce font size
   .style("font-size", function () {
     return fontSize ? fontSize : "".concat(width.current / 11 / (text.length > 10 ? text.length / 10 : 1), "px");
